@@ -1,0 +1,77 @@
+[33mcommit 6dd587891d9c957cf50728e849c34f3f60c2daf0[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: jonotyan <tyanbz@gmail.com>
+Date:   Tue Sep 13 20:33:26 2022 +0600
+
+    черновик структуры
+
+[33mcommit a4f8702330b8b4c2bc767db1ba6e1ddc8f190784[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: jonotyan <tyanbz@gmail.com>
+Date:   Tue Sep 13 19:42:04 2022 +0600
+
+    init structure
+
+[33mcommit 32a9a194636be6771adb197e815ff17358af4f32[m
+Merge: adb30a5 7e6da02
+Author: Eugene T <102475316+jonotyan@users.noreply.github.com>
+Date:   Mon Sep 12 14:50:37 2022 +0600
+
+    Merge pull request #4 from jonotyan/MYVETKA
+    
+    + ветка ?
+
+[33mcommit 7e6da02a42637ed0ff6e8702957aad5bee9f9fab[m[33m ([m[1;31morigin/MYVETKA[m[33m)[m
+Author: Meorwik <ilapolienko77@gmail.com>
+Date:   Sat Sep 10 22:51:19 2022 +0600
+
+    + ветка ?
+
+[33mcommit adb30a58faf12eff656d277da384c2cc68ebb478[m
+Merge: b023968 8ef4677
+Author: Meorwik <104008026+Meorwik@users.noreply.github.com>
+Date:   Sat Sep 10 22:34:23 2022 +0600
+
+    Merge pull request #3 from jonotyan/preprod
+    
+    Вносим изменения на главную ветку ?
+
+[33mcommit 8ef4677f03b9cebdeb6232f54dd1b29bd80f0eb3[m[33m ([m[1;31morigin/preprod[m[33m, [m[1;32mpreprod[m[33m)[m
+Author: Meorwik <ilapolienko77@gmail.com>
+Date:   Sat Sep 10 22:24:08 2022 +0600
+
+    ffd
+
+[33mcommit b023968a7ba3f0c59d17b9f9421a4be873800267[m
+Merge: bd6fddd 72835aa
+Author: Meorwik <104008026+Meorwik@users.noreply.github.com>
+Date:   Tue Sep 6 19:44:49 2022 +0600
+
+    что то понятное
+    
+    магия
+
+[33mcommit 72835aab5ea8509cf2acfa2c0ff286b1b5b38080[m
+Author: Meorwik <ilapolienko77@gmail.com>
+Date:   Tue Sep 6 19:36:56 2022 +0600
+
+    магия
+
+[33mcommit bd6fdddb4e148a7630fb41be26c3cf01aca33344[m
+Merge: 5e37323 4d6c00d
+Author: Eugene T <102475316+jonotyan@users.noreply.github.com>
+Date:   Tue Sep 6 19:27:11 2022 +0600
+
+    Merge pull request #1 from jonotyan/preprod
+    
+    added textfile
+
+[33mcommit 4d6c00d758b0a872c6ff34a597a3ed1a2af5ef7e[m
+Author: jonotyan <tyanbz@gmail.com>
+Date:   Tue Sep 6 19:23:37 2022 +0600
+
+    added textfile
+
+[33mcommit 5e37323764af117c8b28be956c67f529cb33c60d[m
+Author: Eugene T <102475316+jonotyan@users.noreply.github.com>
+Date:   Tue Sep 6 19:04:20 2022 +0600
+
+    Initial commit
