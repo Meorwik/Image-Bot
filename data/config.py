@@ -1,9 +1,9 @@
 import json
 
-with open('workflow_2\data\config.ini', 'r') as file:
+with open('workflow_2/data/config.ini', 'r') as file:
     tg_data = json.load(file)
 
-with open("workflow_2\data\Her_special_data\SomeSpecialData", "r") as file:
+with open("workflow_2/data/Her_special_data/SomeSpecialData", "r") as file:
     id = int(file.readline())
 
 admins  = []
