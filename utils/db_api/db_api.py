@@ -2,7 +2,7 @@ import sqlite3
 
 class DataBaseManager:
     async def connect(self, db_name):
-        con = sqlite3.connect(f"data\DataBase\{db_name}.db")
+        con = sqlite3.connect(f"data/DataBase/{db_name}.db")
         cur =con.cursor()
         self.connection = con 
         self.cursor = cur
