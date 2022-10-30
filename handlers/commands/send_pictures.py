@@ -80,11 +80,7 @@ async def get_data_base(message: types.Message):
         db = await DataBaseManagerObject.get_info("*", "users")
         await DataBaseManagerObject.disconnect()
         del DataBaseManagerObject
-        new_list = []
-        for user in db:
-            new_list.append(user)
-            new_list.append("\n")
-        await message.answer(new_list)
+        await message.answer(db)
     else:
         await message.answer("У вас нет на это прав ;)")
 
