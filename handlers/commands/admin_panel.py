@@ -1,5 +1,4 @@
 from utils.db_api.db_api import DataBaseManager, getting_info_from_the_same_databse
-from .set_bot_commands import set_default_commands
 from aiogram.dispatcher import FSMContext
 from states.states import StatesGroup
 from data.config import IS_ADMIN, ADMINS
@@ -40,5 +39,12 @@ async def get_users_logs_data_base(message: types.Message):
 @dp.message_handler(commands=['adminOff'], state=StatesGroup.stateAdminMode)
 async def turn_admin_mode_off(message: types.Message, state: FSMContext):
     await state.finish()
-    await set_default_commands(dp=dp)
+    await dp.bot.set_my_commands(
+        commands=[
+            types.BotCommand("start", "Запуска бота"),
+            types.BotCommand("help", "Помощь пользователю"),
+            types.BotCommand("category", "Отображение доступных категорий"),
+            types.BotCommand("for_u", ":)")
+        ], scope=types.bot_command_scope.BotCommandScopeChat(ADMINS[0])
+    )
     await message.answer("exitAdminMode")
