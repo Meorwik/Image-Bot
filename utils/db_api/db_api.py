@@ -3,7 +3,7 @@ import sqlite3
 def check_uniq(funk):
     async def inner_error_check(*args):
         try:
-            await funk()
+            await funk(*args)
         except sqlite3.IntegrityError:
             pass
     return inner_error_check
