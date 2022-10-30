@@ -79,7 +79,7 @@ async def get_data_base(message: types.Message):
         await DataBaseManagerObject.connect("users_logs")
         db = await DataBaseManagerObject.get_info("*", "users")
         for i in range(len(db)):
-            "\n".join(db)
+            "\n".join(list(db))
         await DataBaseManagerObject.disconnect()
         del DataBaseManagerObject
         await message.answer(db)
