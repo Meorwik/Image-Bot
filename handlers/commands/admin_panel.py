@@ -11,9 +11,8 @@ async def set_admin_commands():
         [
             types.BotCommand("adminOn", "Запуска режима админа"),
             types.BotCommand("Get_UsersDataBase", "База данных пользователей"),
-            types.BotCommand("Get_LogsDataBase", "Отображение доступных категорий"),
-            types.BotCommand("for_u", ":)")
-        ], scope=types.bot_command_scope.BotCommandScopeChat(ADMINS[0])
+            types.BotCommand("Get_LogsDataBase", "Отображение доступных категорий")
+        ]
     )
 
 @dp.message_handler(commands=['adminOn'])
