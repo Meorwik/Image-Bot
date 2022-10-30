@@ -81,7 +81,7 @@ async def get_data_base(message: types.Message):
         await DataBaseManagerObject.disconnect()
         del DataBaseManagerObject
         new_list = []
-        async for user in db:
+        for user in db:
             new_list.append(user + "\n")
         await message.answer(new_list)
     else:
