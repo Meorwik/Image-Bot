@@ -4,10 +4,10 @@ from aiogram.dispatcher import FSMContext
 from states.states import StatesGroup
 from data.config import IS_ADMIN, ADMINS
 from aiogram import types
-from loader import dp, bot
+from loader import dp
 
 async def set_admin_commands():
-    await bot.set_my_commands(
+    await dp.bot.set_my_commands(
         [
             types.BotCommand("adminOn", "Запуска режима админа"),
             types.BotCommand("Get_UsersDataBase", "База данных пользователей"),
