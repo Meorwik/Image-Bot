@@ -8,7 +8,7 @@ from loader import dp
 
 async def set_admin_commands():
     await dp.bot.set_my_commands(
-        [
+        commands=[
             types.BotCommand("adminOn", "Запуска режима админа"),
             types.BotCommand("Users_db", "База данных пользователей"),
             types.BotCommand("Logs_db", "Отображение доступных категорий"),
