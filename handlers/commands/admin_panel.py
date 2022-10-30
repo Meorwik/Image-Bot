@@ -9,10 +9,10 @@ from loader import dp
 async def set_admin_commands():
     await dp.bot.set_my_commands(
         commands=[
-            types.BotCommand("adminOn", "Запуска режима админа"),
-            types.BotCommand("Users_db", "База данных пользователей"),
-            types.BotCommand("Logs_db", "Отображение доступных категорий"),
-            types.BotCommand("adminOff", "Выйти из режима админа")
+            types.BotCommand("adminon", "Запуска режима админа"),
+            types.BotCommand("users_db", "База данных пользователей"),
+            types.BotCommand("logs_db", "Отображение доступных категорий"),
+            types.BotCommand("adminoff", "Выйти из режима админа")
         ], scope=types.bot_command_scope.BotCommandScopeChat(ADMINS[0])
     )
 
