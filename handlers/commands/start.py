@@ -1,5 +1,6 @@
-from aiogram import types
 from utils.db_api.db_api import DataBaseManager
+from aiogram import types
+
 
 
 async def bot_start(message: types.Message):

@@ -1,8 +1,9 @@
-from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
-from loader import dp
-from data.config import ADMINS
 from handlers.commands.start import bot_start
+from data.config import ADMINS
+from aiogram import types
+from loader import dp
+
 
 
 async def on_startup_notify():

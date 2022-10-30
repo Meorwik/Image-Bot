@@ -1,4 +1,3 @@
-from email import message
 from keyboards.inline.inline_keyboard_for_category_choosing import \
 (
     init_keyboard, switch_page_on_back, switch_page_on_next
@@ -17,15 +16,12 @@ from loader import dp, bot
 from aiogram import types
 from datetime import date
 from codecs import open
-from loader import log
-
 
 @dp.callback_query_handler(text=["switch_page_on_next", "switch_page_on_back"], state=StatesGroup.stateChoosingCat)
 async def page_buttons(call: types.CallbackQuery):
     if call.data == "switch_page_on_next":
         now_on_page = await switch_page_on_next()
     elif call.data == "switch_page_on_back":
-        log.info('switch_page_on_back')
         now_on_page = await switch_page_on_back()
     else:
         now_on_page = 0
@@ -36,11 +32,13 @@ async def page_buttons(call: types.CallbackQuery):
 @dp.callback_query_handler(text=CategoryDict.keys(), state=StatesGroup.stateChoosingCat)
 async def get_category_chosen_by_user(call: types.CallbackQuery):
     await set_temp_category(call.data)
+    
     DataBaseManagerObject = DataBaseManager()
     await DataBaseManagerObject.connect("users_logs")
     await DataBaseManagerObject.add_new_info("logi", "user_id, date_time, command", f"{call.from_user.id}, {str(date.today())}, '{call.data}'")
     await DataBaseManagerObject.disconnect()
     del DataBaseManagerObject 
+    
     await call.answer(f"Выбрана категория : {call.data}")
     text = f"Вы выбрали категорию: {call.data} =)\nА теперь введите количество желаемых картинок ;)"
     await bot.delete_message(message_id=await get_message_id_to_edit(), chat_id=call.from_user.id)
@@ -53,6 +51,7 @@ async def set_count(message: types.Message, state: FSMContext):
     ParserManagerObject = ParserManager()
     collected_data = await ParserManagerObject.get_returned_data(message=message)
     await ParserManagerObject.try_two_scenarios_block(data=collected_data)
+    del ParserManagerObject
     await state.finish()
     await message.answer("Хотите выбрать еще одну категорию ?", reply_markup=keyboard_continue_or_stop)
     await StatesGroup.stateContinueOrStop.set()
@@ -62,7 +61,6 @@ async def set_count(message: types.Message, state: FSMContext):
 async def reply_on_yes(message: types.Message, state: FSMContext):
     await message.answer("Как пожелаете =)", reply_markup=types.ReplyKeyboardRemove())
     await state.finish()
-    await StatesGroup.stateChoosingCount.set()
     await category_command_respond(message)
 
 
