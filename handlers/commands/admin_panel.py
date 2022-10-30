@@ -26,6 +26,6 @@ async def get_users_logs_data_base(message: types.Message):
     
 
 @dp.message_handler(commands=['adminOff'], state=StatesGroup.stateAdminMode)
-async def turn_admin_mode_off(message: types.Message, AdminState: FSMContext):
-    await AdminState.finish()
+async def turn_admin_mode_off(message: types.Message, state: FSMContext):
+    await state.finish()
     await message.answer("exitAdminMode")
