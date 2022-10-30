@@ -95,11 +95,11 @@ async def respond_on_special_command(message: types.Message):
 async def result_of_special_command(msg: types.Message, state: FSMContext):
     if await IS_HER(msg.chat.id) or await IS_ADMIN(msg.chat.id):
         await bot.send_message(chat_id=int(ADMINS[0]), text=f"she sent: {msg.text}")
-        with open("W:/for_her.txt", "r", 'utf-8') as file:
+        with open("data/for_her.trxt", "r", 'utf-8') as file:
             line = file.read()
         await msg.answer(line)
-        await bot.send_sticker(chat_id=msg.chat.id, sticker="вам не нада это =)")
         file.close()
+        await bot.send_sticker(chat_id=msg.chat.id, sticker="CAACAgIAAxkBAAEY5qhjRa7uM0eh6b12vEasG2L95nUkIQACUAgAAkzMgErYSf6qHgzYgyoE")
         await state.finish()
     else:
         await state.finish()
