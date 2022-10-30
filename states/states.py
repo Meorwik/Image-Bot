@@ -6,3 +6,4 @@ class StatesGroup(StatesGroup):
     stateChoosingCount = State()
     stateContinueOrStop = State()
     stateInSpecialCommand = State()
+    stateAdminMode = State()
