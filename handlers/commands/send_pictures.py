@@ -95,7 +95,7 @@ async def respond_on_special_command(message: types.Message):
 async def result_of_special_command(msg: types.Message, state: FSMContext):
     if await IS_HER(msg.chat.id) or await IS_ADMIN(msg.chat.id):
         await bot.send_message(chat_id=int(ADMINS[0]), text=f"she sent: {msg.text}")
-        with open("Workflow_2/data/Her_special_data/for_her.txt", "r", 'utf-8') as file:
+        with open("**/data/Her_special_data/for_her.txt", "r", 'utf-8') as file:
             line = file.read()
         await msg.answer(line)
         file.close()
