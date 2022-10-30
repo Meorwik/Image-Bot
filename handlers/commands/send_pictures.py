@@ -5,17 +5,16 @@ from keyboards.inline.inline_keyboard_for_category_choosing import \
 from keyboards.default.reply_keyboard import keyboard_continue_or_stop
 from LowLevelModuls.process_user_input import ParserManager
 from utils.parser.web_requests import CategoryDict
-from data.config import IS_ADMIN, IS_HER, ADMINS
 from utils.db_api.db_api import DataBaseManager
 from .category import category_command_respond
 from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher import FSMContext
 from ..vars_for_handlers.vars import *
 from states.states import StatesGroup
+from data.config import IS_ADMIN
 from loader import dp, bot
 from aiogram import types
 from datetime import date
-from codecs import open
 
 @dp.callback_query_handler(text=["switch_page_on_next", "switch_page_on_back"], state=StatesGroup.stateChoosingCat)
 async def page_buttons(call: types.CallbackQuery):

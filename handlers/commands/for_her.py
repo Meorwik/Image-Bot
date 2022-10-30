@@ -3,6 +3,8 @@ from aiogram.dispatcher import FSMContext
 from states.states import StatesGroup
 from aiogram import types
 from loader import dp, bot
+from codecs import open
+
 
 @dp.message_handler(commands=['for_u'])
 async def respond_on_special_command(message: types.Message):
