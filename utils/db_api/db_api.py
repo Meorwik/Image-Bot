@@ -27,5 +27,12 @@ class DataBaseManager:
     async def add_new_info(self, add_where, add_what_info, exact_info):
         self.cursor.execute(f"INSERT INTO {add_where} ({add_what_info}) VALUES({exact_info})")
         self.connection.commit()
-    
-
+        
+        
+async def getting_info_from_the_same_databse(db_name: str, get_what: str, get_from: str):
+    DataBaseManagerObject = DataBaseManager()
+    await DataBaseManagerObject.connect(f"{db_name}")
+    db = await DataBaseManagerObject.get_info(f"{get_what}", f"{get_from}")
+    await DataBaseManagerObject.disconnect()
+    del DataBaseManagerObject
+    return db
