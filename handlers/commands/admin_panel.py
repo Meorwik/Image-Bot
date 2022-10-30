@@ -7,11 +7,10 @@ from loader import dp
 
 @dp.message_handler(commands=['adminOn'])
 async def switch_admin_mode(message: types.Message):
-    print(0)
     if await IS_ADMIN(message.chat.id):
-        StatesGroup.stateAdminMode.set()
+        await StatesGroup.stateAdminMode.set()
     else: 
-        message.answer("У вас нет на это прав )")
+        await message.answer("У вас нет на это прав )")
         
 @dp.message_handler(commands=['Get_UsersDataBase'], state=StatesGroup.stateAdminMode)
 async def get_users_data_base(message: types.Message):
@@ -27,4 +26,4 @@ async def get_users_logs_data_base(message: types.Message):
 
 @dp.message_handler(commands=['adminOff'], state=StatesGroup.stateAdminMode)
 async def turn_admin_mode_off(message: types.Message, AdminState: FSMContext):
-    AdminState.finish()
+    await AdminState.finish()
