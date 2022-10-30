@@ -15,7 +15,7 @@ class DataBaseManager:
         self.cursor.execute(f"SELECT {get_what} FROM {get_from}")
         return self.cursor.fetchall()
     
-    async def check_uniq(self, funk):
+    async def check_uniq(funk):
         async def inner_error_check(self):
             try:
                 funk()
