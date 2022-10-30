@@ -1,5 +1,5 @@
 from utils.db_api.db_api import DataBaseManager, getting_info_from_the_same_databse
-from set_bot_commands import set_default_commands
+from .set_bot_commands import set_default_commands
 from aiogram.dispatcher import FSMContext
 from states.states import StatesGroup
 from data.config import IS_ADMIN, ADMINS
