@@ -20,6 +20,7 @@ async def set_admin_commands():
 async def switch_admin_mode(message: types.Message):
     if await IS_ADMIN(message.chat.id):
         await StatesGroup.stateAdminMode.set()
+        await set_admin_commands()
         await message.answer("adminModeActiveted")
     else: 
         await message.answer("У вас нет на это прав )")
