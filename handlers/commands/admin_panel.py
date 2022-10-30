@@ -11,7 +11,7 @@ async def set_admin_commands():
         commands=[
             types.BotCommand("adminon", "Запуска режима админа"),
             types.BotCommand("users_db", "База данных пользователей"),
-            types.BotCommand("logs_db", "Отображение доступных категорий"),
+            types.BotCommand("logs_db", "Показ логов пользователей"),
             types.BotCommand("adminoff", "Выйти из режима админа")
         ], scope=types.bot_command_scope.BotCommandScopeChat(ADMINS[0])
     )
