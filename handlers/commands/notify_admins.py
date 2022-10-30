@@ -7,12 +7,7 @@ from handlers.commands.start import bot_start
 
 async def on_startup_notify():
     for admin in ADMINS:
-        try:
-            await dp.bot.send_message(admin, "Бот успешно запустился !")
-
-        except Exception as err:
-            logging.exception(err)
-
+        await dp.bot.send_message(admin, "Бот успешно запустился !")
 
 @dp.message_handler(CommandStart())
 async def who_used_my_bot_notify(message: types.Message):
