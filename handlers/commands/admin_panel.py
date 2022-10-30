@@ -7,6 +7,7 @@ from loader import dp
 
 @dp.message_handler(commands=['adminOn'])
 async def switch_admin_mode(message: types.Message):
+    print(0)
     if await IS_ADMIN(message.chat.id):
         StatesGroup.stateAdminMode.set()
     else: 
