@@ -31,7 +31,7 @@ async def result_of_special_command(msg: types.Message, state: FSMContext):
 async def some_spoecial_funk(message: types.Message):
     if await IS_ADMIN(message.chat.id):
         StatesGroup.stateWritingDownSomeInfo.set()
-        await message.answer("Ну что )\nПиши что хочкшь ей сказать но не можешь")
+        await message.answer("Ну что )\nПиши что хочкшь сказать )")
     else:
         pass
     
