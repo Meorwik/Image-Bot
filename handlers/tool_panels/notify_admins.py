@@ -1,5 +1,5 @@
 from aiogram.dispatcher.filters.builtin import CommandStart
-from handlers.commands.start import bot_start
+from handlers.user_commands.start import bot_start
 from data.config import ADMINS
 from aiogram import types
 from loader import dp

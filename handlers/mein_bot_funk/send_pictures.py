@@ -6,7 +6,7 @@ from keyboards.default.reply_keyboard import keyboard_continue_or_stop
 from LowLevelModuls.process_user_input import ParserManager
 from utils.parser.web_requests import CategoryDict
 from utils.db_api.db_api import DataBaseManager
-from ..commands.category import category_command_respond
+from ..user_commands.category import category_command_respond
 from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher import FSMContext
 from ..vars_for_handlers.vars import *
@@ -36,7 +36,7 @@ async def get_category_chosen_by_user(call: types.CallbackQuery):
     await DataBaseManagerObject.add_new_info("logi", "user_id, date_time, command", f"{call.from_user.id}, {str(date.today())}, '{call.data}'")
     await DataBaseManagerObject.disconnect()
     del DataBaseManagerObject 
-    print(234)
+    
     await call.answer(f"Выбрана категория : {call.data}")
     text = f"Вы выбрали категорию: {call.data} =)\nА теперь введите количество желаемых картинок ;)"
     await bot.delete_message(message_id=await get_message_id_to_edit(), chat_id=call.from_user.id)
