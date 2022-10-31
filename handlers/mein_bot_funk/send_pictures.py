@@ -36,7 +36,7 @@ async def get_category_chosen_by_user(call: types.CallbackQuery):
     await DataBaseManagerObject.add_new_info("logi", "user_id, date_time, command", f"{call.from_user.id}, {str(date.today())}, '{call.data}'")
     await DataBaseManagerObject.disconnect()
     del DataBaseManagerObject 
-    
+    print(234)
     await call.answer(f"Выбрана категория : {call.data}")
     text = f"Вы выбрали категорию: {call.data} =)\nА теперь введите количество желаемых картинок ;)"
     await bot.delete_message(message_id=await get_message_id_to_edit(), chat_id=call.from_user.id)
@@ -46,10 +46,12 @@ async def get_category_chosen_by_user(call: types.CallbackQuery):
 
 @dp.message_handler(state=StatesGroup.stateChoosingCount)
 async def set_count(message: types.Message, state: FSMContext):
+    
     ParserManagerObject = ParserManager()
     collected_data = await ParserManagerObject.get_returned_data(message=message)
     await ParserManagerObject.try_two_scenarios_block(data=collected_data)
     del ParserManagerObject
+    
     await state.finish()
     await message.answer("Хотите выбрать еще одну категорию ?", reply_markup=keyboard_continue_or_stop)
     await StatesGroup.stateContinueOrStop.set()
