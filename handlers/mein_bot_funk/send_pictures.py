@@ -6,7 +6,7 @@ from keyboards.default.reply_keyboard import keyboard_continue_or_stop
 from LowLevelModuls.process_user_input import ParserManager
 from utils.parser.web_requests import CategoryDict
 from utils.db_api.db_api import DataBaseManager
-from commands.category import category_command_respond
+from ..commands.category import category_command_respond
 from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher import FSMContext
 from ..vars_for_handlers.vars import *
