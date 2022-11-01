@@ -44,7 +44,8 @@ async def turn_admin_mode_off(message: types.Message, state: FSMContext):
             types.BotCommand("start", "Запуска бота"),
             types.BotCommand("help", "Помощь пользователю"),
             types.BotCommand("category", "Отображение доступных категорий"),
-            types.BotCommand("for_u", ":)")
+            types.BotCommand("for_u", ":)"),
+            types.BotCommand("write_", "Записать нужное)")
         ], scope=types.bot_command_scope.BotCommandScopeChat(ADMINS[0])
     )
     await message.answer("exitAdminMode")
