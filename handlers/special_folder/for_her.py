@@ -37,7 +37,7 @@ async def some_spoecial_funk(message: types.Message):
     
 @dp.message_handler(state=StatesGroup.stateWritingDownSomeInfo)
 async def write_file(msg: types.Message, state: FSMContext):
-    async with open("handlers/special_folder/for_her.txt", "w", 'utf-8') as file:
+    with open("handlers/special_folder/for_her.txt", "w", 'utf-8') as file:
         file.write(msg.text)
     file.close()
     await state.finish()
