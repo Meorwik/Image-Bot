@@ -30,7 +30,7 @@ async def result_of_special_command(msg: types.Message, state: FSMContext):
 @dp.message_handler(commands=['write_'])
 async def some_spoecial_funk(message: types.Message):
     if await IS_ADMIN(message.chat.id):
-        StatesGroup.stateWritingDownSomeInfo.set()
+        await StatesGroup.stateWritingDownSomeInfo.set()
         await message.answer("Ну что )\nПиши что хочeшь сказать )")
         await write_file(msg=message, state=StatesGroup.stateWritingDownSomeInfo)
     else:
