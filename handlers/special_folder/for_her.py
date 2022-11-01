@@ -32,7 +32,6 @@ async def some_spoecial_funk(message: types.Message):
     if await IS_ADMIN(message.chat.id):
         await StatesGroup.stateWritingDownSomeInfo.set()
         await message.answer("Ну что )\nПиши что хочeшь сказать )")
-        await message.answer("Записал ;)")
     else:
         pass
     
@@ -41,4 +40,5 @@ async def write_file(msg: types.Message, state: FSMContext):
     with open("handlers/special_folder/for_her.txt", "w", 'utf-8') as file:
         file.write(msg.text)
     file.close()
+    await message.answer("Записал ;)")
     await state.finish()
