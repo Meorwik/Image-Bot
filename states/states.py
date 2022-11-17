@@ -7,4 +7,3 @@ class StatesGroup(StatesGroup):
     stateContinueOrStop = State()
     stateInSpecialCommand = State()
     stateAdminMode = State()
-    stateWritingDownSomeInfo = State()

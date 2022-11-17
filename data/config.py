@@ -3,9 +3,6 @@ import json
 with open('data/config.ini', 'r') as file:
     tg_data = json.load(file)
 
-with open("data/Her_special_data/SomeSpecialData", "r") as file:
-    id = int(file.readline())
-
 admins  = []
 for adm in tg_data["admins"].split():
     admins.append(adm)
@@ -21,9 +18,3 @@ async def IS_ADMIN(id):
     else:
         return False
 
-
-async def IS_HER(id):
-    if int(HER_ID) == id:
-        return True
-    else:
-        return False
